@@ -30,11 +30,9 @@
           <label for="username">Username:</label>
           <input id="username" type="text" data-ng-model="uName"/>
         </p>
-        <p>
           <label for="password">Password:</label>
           <input id="password" type="password" data-ng-model="pWord" />
           <p data-ng-init="errMsg = ''" style="color: red;">{{errMsg}}</p>
-        </p>
         <p>
           <button data-ng-click="login()">Login</button>
         </p>

@@ -4,7 +4,7 @@ app.controller ("myCtrl", function ($scope){
 
   $scope.login = function(){
     if($scope.uName == 'admin' && $scope.pWord == 'password'){
-      window.location.href = "home.html";
+      window.location.href = "main.html";
     }else{
       $scope.errMsg = "Wrong username or password!";
     }
