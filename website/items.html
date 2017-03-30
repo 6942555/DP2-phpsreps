@@ -18,7 +18,7 @@
     <!-- Row 1 start -->
     <div class="row">
       <div class="col-xs-12">
-        <h1 class="text-center">Main Menu</h1>
+        <h1 class="text-center">Items Menu</h1>
       </div>
     </div>
     <!-- Row 1 end -->
@@ -40,19 +40,22 @@
     <!-- Row 2 end -->
     <!-- Row 3 start -->
     <div class="row">
-      <section class="col-xs-4">
-        <h2 class="text-center">Notifications:</h2>
+      <section class="col-xs-12">
+        <h2>Items:</h2>
+        <button data-ng-click="newItem()">Add new item</button>
         <!--Remove test data before deployment -->
-        <ul style="list-style: none;" data-ng-init="listNotif = [{message: 'test notification 1: item 1 low stock'},{ message: 'test notification 2: item 2 low stock'}]">
-          <li data-ng-repeat="n in listNotif">{{n.message}}</li>
-        </ul>
-      </section>
-      <section class="col-xs-8">
-        <h2>Sales overview this month (from 1st):</h2>
-        <ul style="list-style: none;">
-          <li data-ng-init="numMonthSales = 45">Total sales: {{numMonthSales | currency}}</li>
-          <li data-ng-init="strTopSeller = 'test item 1'">Top seller: {{strTopSeller}}</li>
-          <li data-ng-init="numItemsSold = 2">Items sold: {{numItemsSold}}</li>
+        <ul style="list-style: none;" data-ng-init="listItems = [{name: 'item 1', numStock: 11}]">
+          <br />
+          <li data-ng-repeat="i in listItems">
+            {{i.name}}
+            <!--Should open window with all the item's data to be edited-->
+            <button data-ng-onclick="editItem(i)">Edit</button>
+            <!--Should remove item from list-->
+            <button data-ng-onclick="delItem(i)">Delete</button>
+            Stock level: {{i.numStock}}
+            <!--Should open window with all the item's sales to be viewed-->
+            <button data-ng-onclick="viewSales(i)">View sales</button>
+          </li>
         </ul>
       </section>
     </div>
