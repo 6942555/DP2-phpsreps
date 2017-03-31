@@ -1,0 +1,22 @@
+#navid{
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+}
+
+li{
+	float:left;
+}
+
+li a {
+		display: block;
+		color: white;
+		padding: 14px 20px;/* Padding around each hyperlink*/
+}
+
+li a:hover {
+		background-color: #111;/* Darker color when hovering*/
+		text-decoration: none; /* Remove hyperlink underline*/
+}
+
+

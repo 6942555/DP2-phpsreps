@@ -1,106 +1,101 @@
 <!DOCTYPE html>
 <html lang="en" data-ng-app="phpsreps">
 <head>
-  <title>Pharmacy Menu</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-slace=1.0" />
-  <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-  <!-- HTML5 Shim and Respong.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="ja/respond.min.js"></script>
-  <![endif]-->
+	<title>Pharmacy Menu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-slace=1.0" />
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+			<link href="css/main.css" rel="stylesheet" />
+
+	<!-- HTML5 Shim and Respong.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="ja/respond.min.js"></script>
+	<![endif]-->
 </head>
 <body data-ng-controller="myCtrl">
-  <div class="container">
-    <!-- Row 1 start -->
-    <div class="row">
-      <div class="col-xs-12">
-        <h1 class="text-center">Items Menu</h1>
-      </div>
-    </div>
-    <!-- Row 1 end -->
-    <!-- Row 2 start -->
-    <nav class="row">
-      <div class="col-xs-3">
-        <a href="main.html">Main menu</a>
-      </div>
-      <div class="col-xs-3">
-        <a href="items.html">Items menu</a>
-      </div>
-      <div class="col-xs-3">
-        <a href="#">Nav item 3</a>
-      </div>
-      <div class="col-xs-3">
-        <a href="#">Nav item 4</a>
-      </div>
-    </nav>
-    <!-- Row 2 end -->
-    <!-- Row 3 start -->
-    <div class="row">
-      <section class="col-xs-12" data-ng-init="newItemForm = 0">
-        <h2>Items:</h2>
-        <button data-ng-click="newItemForm = 1" data-ng-show="newItemForm == 0">Add new item</button>
-        <button data-ng-click="newItemForm = 0" data-ng-show="newItemForm == 1">Cancel</button>
-        <div data-ng-show="newItemForm == 1">
-          <h3>Create new item</h3>
-          <p>
-            <label for="itemName">Name: </label>
-            <input type="text" id="itemName" data-ng-model="item.name" />
-          </p>
-          <p>
-            <label for="itemCost">Cost:</label>
-            <input type="number" id="itemCost" data-ng-model="item.cost" />
-          </p>
-          <p>
-            <label for="itemPrice">Price: </label>
-            <input type="number" id="itemPrice" data-ng-model="item.price" />
-          </p>
-          <p>
-            <label for="itemStock">Qty:</label>
-            <input type="number" id="itemStock" data-ng-model="item.stock" />
-          </p>
-          <p>
-            <label for="itemSupplier">Supplier</label>
-            <input type="text" id="itemSupplier" data-ng-model="item.supplier" />
-          </p>
-          <p>
-            <label for="itemThreshold">Threshold</label>
-            <input type="number" id="itemThreshold" data-ng-model="item.threshold" />
-          </p>
-          <button data-ng-onclick="createNewItem()">Create item</button>
-        </div>
-        <br />
-        <!--Remove test data before deployment -->
-        <ul style="list-style: none;" data-ng-init="listItems = [{name: 'item 1', numStock: 11}]">
-          <li data-ng-repeat="i in listItems">
-            {{i.name}}
-            <!--Should open window with all the item's data to be edited-->
-            <button data-ng-onclick="editItem(i)">Edit</button>
-            <!--Should remove item from list-->
-            <button data-ng-onclick="delItem(i)">Delete</button>
-            Stock level: {{i.numStock}}
-            <!--Should open window with all the item's sales to be viewed-->
-            <button data-ng-onclick="viewSales(i)">View sales</button>
-          </li>
-        </ul>
-      </section>
-    </div>
-        <!-- Row 3 end -->
-  </div>
-  <!-- container end -->
+	<div class="container">
+		<!-- Row 1 start -->
+		<div class="row">
+			<div class="col-xs-12">
+				<h1 class="text-center">Items Menu</h1>
+			</div>
+		</div>
+		<!-- Row 1 end -->
+		<!-- Row 2 start -->
+			<ul id=navid>
+			<li><a href="main.html">Main menu</a></li>
+			<li><a href="items.html">Items menu</a>	</li>
+			<li><a href="#">Nav item 3</a></li>
+			<li><a href="#">Nav item 4</a></li>
+
+		</ul>
+		<!-- Row 2 end -->
+		<!-- Row 3 start -->
+		<div class="row">
+			<section class="col-xs-12" data-ng-init="newItemForm = 0">
+				<h2>Items:</h2>
+				<button data-ng-click="newItemForm = 1" data-ng-show="newItemForm == 0">Add new item</button>
+				<button data-ng-click="newItemForm = 0" data-ng-show="newItemForm == 1">Cancel</button>
+				<div data-ng-show="newItemForm == 1">
+					<h3>Create new item</h3>
+					<p>
+						<label for="itemName">Name: </label>
+						<input type="text" id="itemName" data-ng-model="item.name" />
+					</p>
+					<p>
+						<label for="itemCost">Cost:</label>
+						<input type="number" id="itemCost" data-ng-model="item.cost" />
+					</p>
+					<p>
+						<label for="itemPrice">Price: </label>
+						<input type="number" id="itemPrice" data-ng-model="item.price" />
+					</p>
+					<p>
+						<label for="itemStock">Qty:</label>
+						<input type="number" id="itemStock" data-ng-model="item.stock" />
+					</p>
+					<p>
+						<label for="itemSupplier">Supplier</label>
+						<input type="text" id="itemSupplier" data-ng-model="item.supplier" />
+					</p>
+					<p>
+						<label for="itemThreshold">Threshold</label>
+						<input type="number" id="itemThreshold" data-ng-model="item.threshold" />
+					</p>
+					<button data-ng-onclick="createNewItem()">Create item</button>
+				</div>
+				<br />
+				<!--Remove test data before deployment -->
+				<ul style="list-style: none;" data-ng-init="listItems = [{name: 'item 1', numStock: 11}]">
+					<li data-ng-repeat="i in listItems">
+						{{i.name}}
+						<!--Should open window with all the item's data to be edited-->
+						<button data-ng-onclick="editItem(i)">Edit</button>
+						<!--Should remove item from list-->
+						<button data-ng-onclick="delItem(i)">Delete</button>
+						Stock level: {{i.numStock}}
+						<!--Should open window with all the item's sales to be viewed-->
+						<button data-ng-onclick="viewSales(i)">View sales</button>
+					</li>
+				</ul>
+			</section>
+		</div>
+				<!-- Row 3 end -->
+	</div>
+	<!-- container end -->
 
 
 
-  <!-- jQuery - required for Bootstrap's JavaScript plugins -->
-  <script src="js/jquery.min.js"></script>
-  <!-- All Bootstrap plug-ins file -->
-  <script src="js/bootstrap.min.js"></script>
-  <!-- Basic AngularJS -->
-  <script src="js/angular.min.js"></script>
-   <!-- Login controller -->
-  <script src="js/main.js"></script>
+	<!-- jQuery - required for Bootstrap's JavaScript plugins -->
+	<script src="js/jquery.min.js"></script>
+	<!-- All Bootstrap plug-ins file -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Basic AngularJS -->
+	<script src="js/angular.min.js"></script>
+	 <!-- Login controller -->
+	<script src="js/main.js"></script>
 </body>
 </html>
