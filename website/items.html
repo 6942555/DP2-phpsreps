@@ -40,12 +40,41 @@
     <!-- Row 2 end -->
     <!-- Row 3 start -->
     <div class="row">
-      <section class="col-xs-12">
+      <section class="col-xs-12" data-ng-init="newItemForm = 0">
         <h2>Items:</h2>
-        <button data-ng-click="newItem()">Add new item</button>
+        <button data-ng-click="newItemForm = 1" data-ng-show="newItemForm == 0">Add new item</button>
+        <button data-ng-click="newItemForm = 0" data-ng-show="newItemForm == 1">Cancel</button>
+        <div data-ng-show="newItemForm == 1">
+          <h3>Create new item</h3>
+          <p>
+            <label for="itemName">Name: </label>
+            <input type="text" id="itemName" data-ng-model="item.name" />
+          </p>
+          <p>
+            <label for="itemCost">Cost:</label>
+            <input type="number" id="itemCost" data-ng-model="item.cost" />
+          </p>
+          <p>
+            <label for="itemPrice">Price: </label>
+            <input type="number" id="itemPrice" data-ng-model="item.price" />
+          </p>
+          <p>
+            <label for="itemStock">Qty:</label>
+            <input type="number" id="itemStock" data-ng-model="item.stock" />
+          </p>
+          <p>
+            <label for="itemSupplier">Supplier</label>
+            <input type="text" id="itemSupplier" data-ng-model="item.supplier" />
+          </p>
+          <p>
+            <label for="itemThreshold">Threshold</label>
+            <input type="number" id="itemThreshold" data-ng-model="item.threshold" />
+          </p>
+          <button data-ng-onclick="createNewItem()">Create item</button>
+        </div>
+        <br />
         <!--Remove test data before deployment -->
         <ul style="list-style: none;" data-ng-init="listItems = [{name: 'item 1', numStock: 11}]">
-          <br />
           <li data-ng-repeat="i in listItems">
             {{i.name}}
             <!--Should open window with all the item's data to be edited-->

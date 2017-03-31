@@ -3,7 +3,6 @@ app.controller ("myCtrl", function ($scope){
   /*code here*/
 
 
-
 }
 );
 
